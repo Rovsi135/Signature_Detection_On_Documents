@@ -10,12 +10,13 @@ alternative models (test with same conditions for a better results.)
 prepare data for a next yolo model.
 github share repo
 linkedIn CemnurUzun.
+Maybe test a bigger model?
 
 
     
 Restrictions:
-    - The dataset contains uint8 .tif images for model #1. 
-    - The dataset contains uint8 .tif, and jpg images for model #2.
+    - The train dataset contains uint8 .tif images for model #1. 
+    - The train dataset contains uint8 .tif, and jpg images for model #2.
 
 Progress:
     -Trained Model sig_yolo11s_img896_2:
