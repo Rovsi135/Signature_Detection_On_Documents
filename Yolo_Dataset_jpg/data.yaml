@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['signature']
+
+roboflow:
+  workspace: roboflow-100
+  project: signatures-xc8up
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/roboflow-100/signatures-xc8up/dataset/2

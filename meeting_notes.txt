@@ -1,0 +1,83 @@
+Meeting Questions:
+    Tested the first model on my personal documents and seen horrible results.
+    therefore, I have decided to find a new dataset with new format (jpg) and RGB. 
+    Fine-Tuned pre-existing model on the mixed dataset.
+    Is there other ways to improve this model than updating the dataset and retraining/fine-tuning it.
+
+
+image data augmentation
+alternative models (test with same conditions for a better results.)
+prepare data for a next yolo model.
+github share repo
+linkedIn CemnurUzun.
+
+
+    
+Restrictions:
+    - The dataset contains uint8 .tif images for model #1. 
+    - The dataset contains uint8 .tif, and jpg images for model #2.
+
+Progress:
+    -Trained Model sig_yolo11s_img896_2:
+        added the new dataset from roboflow: "signatures-xc8up"
+            SOME OF THE LABELINGS ARE NOT TIGHT, MIGHT AFFECT THE Model
+        Results for mixed Test dataset:
+                         Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 1.2it/s 8.4s
+                           all        152        184      0.943       0.88      0.944      0.721
+        Results for jpg Test dataset:
+                         Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 3/3 2.3it/s 1.3s
+                           all         37         54      0.917      0.704      0.835       0.56
+        Results for tif Test dataset:
+                         Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 8/8 2.4it/s 3.3s
+                           all        115        130       0.95      0.954      0.979      0.778
+
+
+    -Trained Model sig_yolo11s_img896_1:
+        Results for mixed Test dataset:
+                         Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 10/10 2.5it/s 4.1s
+                           all        152        184      0.916      0.853      0.912      0.703
+        Results for jpg Test dataset:
+                        Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 3/3 2.5it/s 1.2s
+                          all         37         54      0.851      0.648       0.74      0.471
+        Results for tif Test dataset:
+                        Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 8/8 2.4it/s 3.3s
+                          all        115        130      0.918      0.954       0.98        0.8
+
+
+
+
+        Results for validation(true metrics shall be obtained by test set):
+        Recall = ~0.95
+        mAP50 = ~0.98
+        mAP50-95 = ~0.78
+        box_loss = ~0.63
+        cls_loss = ~0.39
+        dfl_loss = ~0.935
+    
+    - Converting data into yolo readable format:
+        Split the data into train, val, test
+        Normalize the bounds of the box (Have been checked with visualizer.)
+
+    - Lable_Visualizer
+        Can visualize labeled box, given csv for label and image in .tif format. (For both normalized and not normalized form)
+        
+    - Data_Loader: 
+        Can convert the labels into Pandas DataFrame for easier lookup.
+        Can check for missing rows.
+
+TODO:
+    - Domain shift problem: Generalization to RGB .png files with different dimensions do NOT work well.
+        I have tried to convert the png to tiff, however the issue is not resolved.
+
+
+    - Test on different dataset (Tested on personal small dataset)
+    - Introduce confidence treshold (this is done when predicting.)
+    - Train model again:
+        - use bigger size/higher parameters for better metrics?
+    - make a script that runs the model on a given .tif
+    - evaluate
+    - check bad evaluated data
+    - Croppable boxes if the evaluation is good enough
+    
+
+    
