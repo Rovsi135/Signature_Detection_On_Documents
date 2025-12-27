@@ -1,0 +1,6 @@
+path: /home/rovsi/Projects/Vakifbank_Internship/Signature_Detection/Yolo_Dataset_mixed
+train: images/Train
+val: images/Val
+test: images/Test
+names:
+  0: signature
