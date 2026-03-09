@@ -1,17 +1,17 @@
-Meeting Questions:
-    Tested the first model on my personal documents and seen horrible results.
-    therefore, I have decided to find a new dataset with new format (jpg) and RGB. 
-    Fine-Tuned pre-existing model on the mixed dataset.
-    Is there other ways to improve this model than updating the dataset and retraining/fine-tuning it.
 
 
-image data augmentation
-alternative models (test with same conditions for a better results.)
-prepare data for a next yolo model.
-github share repo
-linkedIn CemnurUzun.
+Bu sureci bir internship olarak cvme, linkedine ekleyebiliyor muyum? 
+Rapor sadece sonuca odakli mi olmali yoksa surece mi? ornegin ilk model relevant mi?
+Add constraints: only small models are being compared. 
+
 Maybe test a bigger model?
+Data augmentation
+consider model ensembling(using multiple models on the same image and combining the results )
 
+found a new signature dataset again. https://github.com/NanoNets/SignatureDetectionDataset/tree/master/annotated
+any m model results in OOM. I might try to use hpc, but thats next level. 
+
+Detayli karsilastirma raporu (with parameters, datasets, results as metrics and visuals.)
 
     
 Restrictions:
