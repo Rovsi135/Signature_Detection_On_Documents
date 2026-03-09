@@ -37,7 +37,6 @@ def get_train_dataframe():
     for each image in the training set."""
     return df_train_csv
 
-
 def get_test_dataframe():
     """Returns the testing dataframe
     that contains the bounding box coordinates and labels
