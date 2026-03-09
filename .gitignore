@@ -6,3 +6,7 @@ Selected_Images_for_report_rf_detr
 Selected_Images_for_report_yolo
 runs_rfdetr
 runs
+Yolo_Dataset_jpg
+Yolo_Dataset_tif
+Yolo_Dataset_mixed
+COCO_Dataset_mixed
